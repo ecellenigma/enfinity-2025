@@ -27,12 +27,7 @@ export default function Page() {
               <span className="text-sm tracking-widest uppercase text-white/70">Enigma presents</span>
             </div>
             <div className="flex items-center gap-3">
-              <span className="logo-mark" aria-hidden="true">
-                ∞
-              </span>
-              <h1 className="text-balance text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight gradient-text">
-                ENFINITY
-              </h1>
+            <img src="/blackbacklogo.svg" alt="Logo" className="logo-mark" aria-hidden="true" />
             </div>
             <p className="text-pretty text-base md:text-lg text-white/80 leading-relaxed max-w-prose">
               Explore the boundless possibilities of innovation. Join us for immersive sessions, stellar sponsors, and a

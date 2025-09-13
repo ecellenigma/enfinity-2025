@@ -163,13 +163,8 @@
   }
 
   .logo-mark {
-    font-size: 1.75rem;
-    line-height: 1;
-    background: radial-gradient(circle at 30% 30%, var(--c-grad-1-start), var(--c-grad-1-end));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    filter: drop-shadow(0 0 10px rgba(167, 60, 255, 0.6));
+   width: 50vw;
+   max-width: none;
   }
 
   /* Links and buttons */
