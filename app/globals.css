@@ -161,19 +161,6 @@
     background-clip: text;
     color: transparent;
   }
-
-  .logo-mark {
-   width: 50vw;
-   max-width: none;
-  }
-  .logo-mark-2 {
-   width: 25vw;
-   max-width: none;
-  }
-  .logo-mark-3 {
-   width: 12vw;
-   max-width: none;
-  }
   /* Links and buttons */
   .nav-link {
     position: relative;

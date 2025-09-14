@@ -25,16 +25,16 @@ export default function Page() {
 
       {/* Hero */}
       <section className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-16 md:pt-24 pb-16 md:pb-24">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-10 items-center">
           <div className="space-y-6">
             <div className="inline-flex items-center gap-3">
               <EventStatusChip startDate={EVENT_START_DATE} endDate={EVENT_END_DATE} />
               <span className="text-sm tracking-widest uppercase text-white/70 font-medium">Enigma presents</span>
             </div>
-            <div className="flex flex-col items-center gap-3">
-              <img src="/blackbacklogo.svg" alt="Logo" className="logo-mark" aria-hidden="true" />
+            <div className="flex justify-center md:justify-start">
+              <img src="/blackbacklogo.svg" alt="Logo" className="w-full max-w-[350px] lg:max-w-[450px] xl:max-w-[500px] h-auto" aria-hidden="true" />
             </div>
-            <p className="text-pretty text-base md:text-lg text-white/80 leading-relaxed max-w-prose">
+            <p className="text-pretty text-base md:text-lg text-white/80 leading-relaxed max-w-prose mt-8 md:mt-4">
               Explore the boundless possibilities of innovation. Join us for immersive sessions, stellar sponsors, and a
               celebration of creativity that goes beyond the horizon.
             </p>
@@ -55,13 +55,13 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative mt-16 md:mt-0 w-full">
             <OrbitScene />
           </div>
         </div>
       </section>
       {/* Counter */}
-      <div className="counter flex flex-col items-center justify-center mt-30">
+      <div className="counter flex flex-col items-center justify-center mt-24 mt-30">
         <Counters targetDate={EVENT_START_DATE} />
       </div>
       {/* Previous Events */}

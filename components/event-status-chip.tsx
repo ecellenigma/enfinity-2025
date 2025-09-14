@@ -13,34 +13,31 @@ export function EventStatusChip({ startDate, endDate }: EventStatusChipProps) {
   if (now < startDate) {
     status = "upcoming";
     text = "Upcoming";
-    styles =
-      "bg-gradient-to-r from-purple-500/40 to-pink-500/40 border-pink-400/60 shadow-pink-400/25";
+    styles = "bg-white/5 border-white/20 text-white/90 shadow-sm";
   } else if (now <= endDate) {
     status = "live";
     text = "Live Now";
-    styles =
-      "bg-gradient-to-r from-green-500/40 to-emerald-500/40 border-green-400/60 shadow-green-400/25";
+    styles = "bg-green-500/10 border-green-400/30 text-green-100 shadow-sm";
   } else {
     status = "ended";
     text = "Ended";
-    styles =
-      "bg-gradient-to-r from-gray-500/40 to-slate-500/40 border-gray-400/60 shadow-gray-400/25";
+    styles = "bg-gray-500/10 border-gray-400/25 text-gray-300 shadow-sm";
   }
 
   return (
     <span
-      className={`inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold rounded-full border backdrop-blur-md shadow-lg ${styles}`}
+      className={`inline-flex items-center gap-2 px-3 py-1.5 text-xs font-medium rounded-full border backdrop-blur-sm ${styles}`}
     >
       <span
-        className={`w-2 h-2 rounded-full ${
+        className={`w-1.5 h-1.5 rounded-full ${
           status === "upcoming"
-            ? "bg-white animate-pulse"
+            ? "bg-white/80"
             : status === "live"
             ? "bg-green-400 animate-pulse"
-            : "bg-gray-400"
+            : "bg-gray-400/70"
         }`}
       ></span>
-      <span className="text-white font-bold">{text}</span>
+      <span className="font-medium tracking-wide">{text}</span>
     </span>
   );
 }
