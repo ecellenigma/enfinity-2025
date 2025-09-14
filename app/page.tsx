@@ -80,6 +80,15 @@ export default function Page() {
         <div className="counter flex flex-col items-center justify-center">
           <Counters startDate={EVENT_START_DATE} endDate={EVENT_END_DATE} />
         </div>
+
+        {/* TODO: Timeline */}
+        <section
+          id="timeline"
+          className="relative max-w-6xl mx-auto px-4 pt-8 sm:px-6 pb-20"
+        >
+          <h2 className="section-title">Timeline</h2>
+          <Timeline/>
+        </section>
         {/* Previous Events */}
         <section
           id="events"
