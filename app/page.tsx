@@ -5,10 +5,11 @@ import { OrbitScene } from "@/components/orbit-scene"
 import { PreviousEvents } from "@/components/previous-events"
 import { Sponsors } from "@/components/sponsors"
 import { SiteFooter } from "@/components/site-footer"
+import EventCarousel from "@/components/eventcarousel";
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-space text-white relative overflow-hidden">
+    <main className="min-h-screen bg-space text-white relative overflow-visible">
       {/* Background nebula glows */}
       <div className="pointer-events-none absolute inset-0">
         <div className="nebula nebula-1" />
@@ -61,17 +62,13 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Previous Events */}
-      <section id="events" className="relative max-w-6xl mx-auto px-4 sm:px-6 pb-20">
-        <h2 className="section-title">Previous Events</h2>
-        <PreviousEvents />
-      </section>
-
-      {/* Sponsors */}
-      <section id="sponsors" className="relative max-w-6xl mx-auto px-4 sm:px-6 pb-20">
-        <h2 className="section-title">Sponsors</h2>
-        <Sponsors />
-      </section>
+{/* Previous Events */}
+<section
+  id="events"
+  className="relative max-w-6xl mx-auto px-4 sm:px-6 pb-20 overflow-visible min-h-[45rem]"
+>
+  <EventCarousel />
+</section>
 
       {/* FAQs */}
       <section id="faqs" className="relative max-w-3xl mx-auto px-4 sm:px-6 pb-24">
