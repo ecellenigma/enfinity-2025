@@ -1,8 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Link from "next/link"
-import { SiteHeader } from "@/components/site-header"
-import { OrbitScene } from "@/components/orbit-scene"
-import { PreviousEvents } from "@/components/previous-events"
+import SiteHeader  from "@/components/site-header"
+import { OrbitScene } from "@/components/orbit-scene";
 import { Sponsors } from "@/components/sponsors"
 import { SiteFooter } from "@/components/site-footer"
 import EventCarousel from "@/components/eventcarousel";
