@@ -2,10 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 
+interface CounterProps {
+  targetDate: Date;
+}
 
-const App = () => {
-  
-  const [targetDate, setTargetDate] = useState(new Date('2025-10-12T00:00:00'));
+const App = ({ targetDate }: CounterProps) => {
   
   
   const [countdown, setCountdown] = useState({
@@ -32,13 +33,9 @@ const App = () => {
     }
   };
 
-
   useEffect(() => {
     const timer = setInterval(calculateCountdown, 1000);
-    
     calculateCountdown();
-
-  
     return () => clearInterval(timer);
   }, [targetDate]); 
 
@@ -70,7 +67,7 @@ const App = () => {
           </div>
         ) : (
           <p className="text-2xl font-bold text-purple-400">
-            Countdown is complete!
+            
           </p>
         )}
       </div>

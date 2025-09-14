@@ -5,7 +5,12 @@ import { OrbitScene } from "@/components/orbit-scene"
 import { PreviousEvents } from "@/components/previous-events"
 import { Sponsors } from "@/components/sponsors"
 import { SiteFooter } from "@/components/site-footer"
-import  Counters  from "@/components/counter"
+import Counters from "@/components/counter"
+import { EventStatusChip } from "@/components/event-status-chip"
+
+const EVENT_START_DATE = new Date('2025-10-09T00:00:00')
+const EVENT_END_DATE = new Date('2025-10-11T10:00:00')
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-space text-white relative overflow-hidden">
@@ -23,14 +28,11 @@ export default function Page() {
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="space-y-6">
             <div className="inline-flex items-center gap-3">
-              <span className="inline-block h-6 w-10 rounded-full bg-[var(--c-grad-1-start)]/40 ring-2 ring-[var(--c-grad-1-end)]/60 shadow-[0_0_30px_rgba(232,51,102,0.45)]" />
-              <span className="text-sm tracking-widest uppercase text-white/70">Enigma presents</span>
+              <EventStatusChip startDate={EVENT_START_DATE} endDate={EVENT_END_DATE} />
+              <span className="text-sm tracking-widest uppercase text-white/70 font-medium">Enigma presents</span>
             </div>
             <div className="flex flex-col items-center gap-3">
               <img src="/blackbacklogo.svg" alt="Logo" className="logo-mark" aria-hidden="true" />
-              <h1 className="text-balance text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight gradient-text">
-                ENFINITY
-              </h1>
             </div>
             <p className="text-pretty text-base md:text-lg text-white/80 leading-relaxed max-w-prose">
               Explore the boundless possibilities of innovation. Join us for immersive sessions, stellar sponsors, and a
@@ -60,8 +62,7 @@ export default function Page() {
       </section>
       {/* Counter */}
       <div className="counter flex flex-col items-center justify-center mt-30">
-        <h2 className="section-title text-center">Count Down</h2>
-        <Counters />
+        <Counters targetDate={EVENT_START_DATE} />
       </div>
       {/* Previous Events */}
       <section id="events" className="relative max-w-6xl mx-auto px-4 sm:px-6 pb-20">
