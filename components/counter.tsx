@@ -46,55 +46,58 @@ const App = ({ startDate, endDate }: CounterProps) => {
     return () => clearInterval(timer);
   }, [startDate]);
 
-  return !countdown.didEnd && (
-    <div className="flex flex-col items-center justify-center text-white my-10">
-      <div className="p-4 w-1/2 text-center space-y-6 mb-30">
-        {/* Countdown Display */}
-        <div className="flex justify-center space-x-2 sm:space-x-4 md:space-x-6 lg:space-x-8 xl:space-x-10 text-center items-center">
-          <div className="flex flex-col items-center min-w-[70px] sm:min-w-[90px]">
-            <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-pink-500">
-              {countdown.days}
+  return (
+    !countdown.didEnd && (
+      <div className="flex flex-col items-center justify-center text-white my-10">
+        <div className="p-4 w-1/2 text-center space-y-6 mb-30">
+          {/* Countdown Display */}
+          <div className="flex justify-center space-x-2 sm:space-x-4 md:space-x-6 lg:space-x-8 xl:space-x-10 text-center items-center">
+            <div className="flex flex-col items-center min-w-[70px] sm:min-w-[90px]">
+              <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold gradient-text">
+                {countdown.days}
+              </span>
+              <p className="text-xs sm:text-sm md:text-base text-white mt-1">
+                Days
+              </p>
+            </div>
+            <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white self-center">
+              :
             </span>
-            <p className="text-xs sm:text-sm md:text-base text-white mt-1">
-              Days
-            </p>
-          </div>
-          <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white self-center">
-            :
-          </span>
-          <div className="flex flex-col items-center min-w-[70px] sm:min-w-[90px]">
-            <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-pink-500">
-              {countdown.hours}
+            <div className="flex flex-col items-center min-w-[70px] sm:min-w-[90px]">
+              <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold gradient-text">
+                {countdown.hours}
+              </span>
+              <p className="text-xs sm:text-sm md:text-base text-white mt-1">
+                Hours
+              </p>
+            </div>
+            <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white self-center">
+              :
             </span>
-            <p className="text-xs sm:text-sm md:text-base text-white mt-1">
-              Hours
-            </p>
-          </div>
-          <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white self-center">
-            :
-          </span>
-          <div className="flex flex-col items-center min-w-[70px] sm:min-w-[90px]">
-            <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-pink-500">
-              {countdown.minutes}
+            <div className="flex flex-col items-center min-w-[70px] sm:min-w-[90px]">
+              <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold gradient-text">
+                {countdown.minutes}
+              </span>
+              <p className="text-xs sm:text-sm md:text-base text-white mt-1">
+                Minutes
+              </p>
+            </div>
+            <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white self-center">
+              :
             </span>
-            <p className="text-xs sm:text-sm md:text-base text-white mt-1">
-              Minutes
-            </p>
-          </div>
-          <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white self-center">
-            :
-          </span>
-          <div className="flex flex-col items-center min-w-[70px] sm:min-w-[90px]">
-            <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-pink-500">
-              {countdown.seconds}
-            </span>
-            <p className="text-xs sm:text-sm md:text-base text-white mt-1">
-              Seconds
-            </p>
+            <div className="flex flex-col items-center min-w-[70px] sm:min-w-[90px]">
+              <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold gradient-text">
+                {countdown.seconds}
+              </span>
+              <p className="text-xs sm:text-sm md:text-base text-white mt-1">
+                Seconds
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>)
+    )
+  );
 };
 
 export default App;
