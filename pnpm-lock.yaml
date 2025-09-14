@@ -1901,7 +1901,7 @@ snapshots:
 
   '@img/sharp-win32-ia32@0.34.3':
     optional: true
-
+    
   '@img/sharp-win32-x64@0.34.3':
     optional: true
 
