@@ -1,21 +1,30 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import {
+  motion,
+  useAnimationFrame,
+  useMotionValue,
+  useScroll,
+  useVelocity,
+} from "framer-motion";
 
 export function OrbitScene() {
-  const [scrollRotation, setScrollRotation] = useState(0);
+  const BASE_SPEED = 12;
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      // Convert scroll position to rotation degrees (adjust multiplier for speed)
-      const rotation = scrollY * 0.2;
-      setScrollRotation(rotation);
-    };
+  const { scrollY } = useScroll();
+  const scrollVel = useVelocity(scrollY);
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const rotation = useMotionValue(0);
+
+  useAnimationFrame((t, delta) => {
+    const dt = delta / 1000;
+
+    const v = scrollVel.get() || 0;
+    const influence =
+      Math.sign(v) * Math.min(240, Math.pow(Math.abs(v) / 800, 0.7) * 150);
+    const speed = BASE_SPEED + influence;
+    rotation.set(rotation.get() + speed * dt);
+  });
 
   return (
     <div className="relative aspect-[4/3] max-w-[520px] mx-auto">
@@ -43,26 +52,21 @@ export function OrbitScene() {
       </div>
 
       {/* Orbiting orbs - each with different rotation speeds */}
-      <div
+      <motion.div
         className="absolute inset-0"
-        style={{ transform: `rotate(${scrollRotation}deg)` }}
+        style={{ rotate: rotation, transformOrigin: "50% 50%" }}
+        aria-hidden="true"
       >
-        <Orb className="absolute -top-3 left-10" size={80} />
-      </div>
-
-      <div
-        className="absolute inset-0"
-        style={{ transform: `rotate(${scrollRotation * 1.5}deg)` }}
-      >
-        <Orb className="absolute top-[18%] right-[8%]" size={110} />
-      </div>
-
-      <div
-        className="absolute inset-0"
-        style={{ transform: `rotate(${scrollRotation * 0.7}deg)` }}
-      >
-        <Orb className="absolute bottom-[14%] left-[14%]" size={95} />
-      </div>
+        <Orb className="absolute -top-3 left-10 animate-float-slow" size={80} />
+        <Orb
+          className="absolute top-[18%] right-[8%] animate-float"
+          size={110}
+        />
+        <Orb
+          className="absolute bottom-[14%] left-[14%] animate-float-medium"
+          size={95}
+        />
+      </motion.div>
     </div>
   );
 }
