@@ -10,6 +10,7 @@ import { OrbitScene } from "@/components/orbit-scene";
 import { PreviousEvents } from "@/components/previous-events";
 import { Sponsors } from "@/components/sponsors";
 import { SiteFooter } from "@/components/site-footer";
+import Timeline from "@/components/event-timeline";
 import Counters from "@/components/counter";
 import { EventStatusChip } from "@/components/event-status-chip";
 
