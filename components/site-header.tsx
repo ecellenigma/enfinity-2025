@@ -15,10 +15,10 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all ${
+      className={`sticky top-0 z-50 transition-all border-b ${
         scrolled
-          ? "backdrop-blur-md bg-black/30 border-b border-white/10"
-          : "bg-transparent"
+          ? "backdrop-blur-md bg-black/30 border-white/10"
+          : "bg-transparent border-white/0"
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
@@ -36,7 +36,7 @@ export function SiteHeader() {
           <Link href="#faqs" className="nav-link">
             Contact
           </Link>
-          <Link href="#register" className="btn-chip">
+          <Link href="#register" className="btn-chip text-white">
             Register
           </Link>
         </nav>

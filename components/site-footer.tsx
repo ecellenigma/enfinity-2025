@@ -1,4 +1,5 @@
-import Link from "next/link"
+import Link from "next/link";
+import { Phone, Mail } from "lucide-react";
 
 export function SiteFooter() {
   return (
@@ -8,39 +9,56 @@ export function SiteFooter() {
           <div className="text-center sm:text-left space-y-2 mt-1.100">
             {/* Contact Information */}
             <div className="font-bold text-2xl text-white">CONTACT US</div>
-            <div className="flex items-center justify-center sm:justify-start space-x-2 text-white/60">
-              <span className="text-xl">📞</span>
+            <div className="flex items-center justify-center sm:justify-start space-x-3 text-white/60">
+              <Phone className="w-6 h-6" />
               <span>1-514-456-2753</span>
             </div>
-            <div className="flex items-center justify-center sm:justify-start space-x-2 text-white/60">
-              <span className="text-xl">📧</span>
+            <div className="flex items-center justify-center sm:justify-start space-x-3 text-white/60">
+              <Mail className="w-6 h-6" />
               <a href="mailto:ecell@nmit.ac.in">ecell@nmit.ac.in</a>
             </div>
           </div>
-          
+
           {/* Logos and Slogan - Centered */}
           <div className="flex flex-col items-center justify-center space-y-4">
             <div className="flex flex-col items-center">
-              <img src="/enigma.svg" alt="enigma-logo" className="w-[30vw] md:w-24 lg:w-36 h-auto" />
-              <img src="/blackbacklogo.svg" alt="Enfinity Logo" className="w-[70vw] md:w-56 lg:w-84 h-auto my-2" />
+              <img
+                src="/enigma.svg"
+                alt="enigma-logo"
+                className="w-[30vw] md:w-24 lg:w-36 h-auto"
+              />
+              <img
+                src="/blackbacklogo.svg"
+                alt="Enfinity Logo"
+                className="w-[70vw] md:w-56 lg:w-84 h-auto my-2"
+              />
               <div className="w-full text-center mt-2 text-xs text-white/60">
-                © {new Date().getFullYear()} Enigma • ENFINITY. All rights reserved.
+                © {new Date().getFullYear()} Enigma • ENFINITY. All rights
+                reserved.
               </div>
             </div>
-            <p className="text-white/60 text-center">Enigma – Entrepreneurship Cell NMIT</p>
+            <p className="text-white/60 text-center">
+              Enigma – Entrepreneurship Cell NMIT
+            </p>
           </div>
-          
+
           {/* This column is now empty to maintain the 3-column layout */}
           <div></div>
         </div>
-        
+
         {/* Separator Line */}
-          <hr className="my-8 border-t-2" style={{ borderColor: "#EA3363", backgroundColor: "#EA3363" }} />
+        <hr
+          className="my-8 border-t-2"
+          style={{ borderColor: "#EA3363", backgroundColor: "#EA3363" }}
+        />
         {/* Copyright and Social Icons at the bottom */}
-  <div className="flex flex-col md:flex-row items-center justify-center pt-4 text-xs text-white/60">
+        <div className="flex flex-col md:flex-row items-center justify-center pt-4 text-xs text-white/60">
           <div className="flex space-x-4">
             {/* Social Icons */}
-            <Link href="https://www.instagram.com/ecellnmit/?hl=en" className="text-white/60 hover:text-white">
+            <Link
+              href="https://www.instagram.com/ecellnmit/?hl=en"
+              className="text-white/60 hover:text-white"
+            >
               <img src="/insta.svg" alt="" />
             </Link>
             <Link href="#" className="text-white/60 hover:text-white">
@@ -58,7 +76,10 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="absolute -bottom-16 right-10 size-40 rounded-full glow-orb" aria-hidden="true" />
+        <div
+          className="absolute -bottom-16 right-10 size-40 rounded-full glow-orb"
+          aria-hidden="true"
+        />
       </div>
     </footer>
   );
