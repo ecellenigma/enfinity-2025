@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Event {
   name: string;
@@ -41,6 +42,15 @@ export default function EventCarousel() {
     setCurrentIndex((prev) => (prev - 1 + events.length) % events.length);
   const next = () => setCurrentIndex((prev) => (prev + 1) % events.length);
 
+  // auto scroll
+  useEffect(() => {
+    const interval = setInterval(() => {
+      next();
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
   return (
     <section className="w-full py-16 flex flex-col items-center relative overflow-visible">
       {/* Heading */}
@@ -49,13 +59,14 @@ export default function EventCarousel() {
       </h2>
 
       {/* Carousel */}
-      <div className="relative w-full flex items-center justify-center mt-60 sm:mt-64">
+      <div className="relative w-full flex items-center justify-center mt-48 sm:mt-60 lg:mt-64 px-4 sm:px-8">
         {/* Left Arrow */}
         <button
           onClick={prev}
-          className="absolute -left-2 sm:-left-10 z-20 bg-black/30 backdrop-blur-md p-3 sm:p-4 rounded-full hover:bg-black/40 transition text-xl sm:text-2xl text-white"
+          className="absolute left-4 z-30 bg-background/20 backdrop-blur-md p-3 rounded-full hover:bg-background/30 transition-all duration-200 border border-white/10 hover:border-white/20"
+          aria-label="Previous event"
         >
-          &lt;
+          <ChevronLeft className="w-5 h-5 text-white" />
         </button>
 
         {/* Cards */}
@@ -73,43 +84,49 @@ export default function EventCarousel() {
                 href={event.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute top-1/2 left-1/2 cursor-pointer rounded-xl overflow-hidden bg-black/30 backdrop-blur-lg shadow-[0_0_40px_rgba(167,60,255,0.35),0_0_60px_rgba(232,51,102,0.25)] w-72 sm:w-[28rem] md:w-[32rem] h-[380px] flex flex-col"
+                className={`absolute top-1/2 left-1/2 cursor-pointer rounded-xl overflow-hidden bg-background/10 backdrop-blur-lg border border-white/10 w-64 sm:w-80 lg:w-96 h-72 sm:h-80 flex flex-col transition-shadow duration-300 ${
+                  isActive ? "" : "shadow-lg shadow-black/20"
+                }`}
                 style={{
                   translateX: "-50%",
                   translateY: "-50%",
                   zIndex: isActive ? 20 : 10,
                 }}
                 animate={{
-                  x: offset * 420,
+                  x: offset * (window.innerWidth < 640 ? 220 : 320),
                   scale: isActive ? 1 : 0.85,
-                  opacity: isActive ? 1 : 0.5,
+                  opacity: isActive ? 1 : 0.6,
                 }}
                 transition={{
-                  type: "tween",
-                  ease: "easeInOut",
-                  duration: 0.8,
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 30,
+                  duration: 0.6,
                 }}
               >
                 {/* Image band */}
-                <div className="w-full h-28 sm:h-32 relative overflow-hidden">
+                <div className="w-full h-24 sm:h-28 relative overflow-hidden">
                   <img
                     src={event.image}
                     alt={event.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-purple-500/30 to-transparent"></div>
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-col items-center text-center p-4 sm:p-6 overflow-hidden">
+                <div className="flex flex-col items-center text-center p-4 overflow-hidden">
                   <h3 className="text-white font-extrabold text-lg sm:text-xl md:text-2xl mb-3 gradient-text">
                     {event.name}
                   </h3>
                   <motion.p
-                    className="text-white/70 text-sm sm:text-base md:text-lg leading-relaxed"
+                    className="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed line-clamp-4"
                     initial={{ opacity: 0, y: 20 }}
-                    animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    animate={
+                      isActive ? { opacity: 1, y: 0 } : { opacity: 0.7, y: 10 }
+                    }
+                    transition={{ duration: 0.5, ease: "easeOut" }}
                   >
                     {event.description}
                   </motion.p>
@@ -122,9 +139,10 @@ export default function EventCarousel() {
         {/* Right Arrow */}
         <button
           onClick={next}
-          className="absolute -right-2 sm:-right-10 z-20 bg-black/30 backdrop-blur-md p-3 sm:p-4 rounded-full hover:bg-black/40 transition text-xl sm:text-2xl text-white"
+          className="absolute right-4 z-30 bg-background/20 backdrop-blur-md p-3 rounded-full hover:bg-background/30 transition-all duration-200 border border-white/10 hover:border-white/20"
+          aria-label="Next event"
         >
-          &gt;
+          <ChevronRight className="w-5 h-5 text-white" />
         </button>
       </div>
     </section>
