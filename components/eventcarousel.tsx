@@ -37,6 +37,18 @@ const events: Event[] = [
 
 export default function EventCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(1024);
+
+  useEffect(() => {
+    const updateWindowWidth = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    updateWindowWidth();
+
+    window.addEventListener("resize", updateWindowWidth);
+    return () => window.removeEventListener("resize", updateWindowWidth);
+  }, []);
 
   const prev = () =>
     setCurrentIndex((prev) => (prev - 1 + events.length) % events.length);
@@ -93,7 +105,7 @@ export default function EventCarousel() {
                   zIndex: isActive ? 20 : 10,
                 }}
                 animate={{
-                  x: offset * (window.innerWidth < 640 ? 220 : 320),
+                  x: offset * (windowWidth < 640 ? 220 : 320),
                   scale: isActive ? 1 : 0.85,
                   opacity: isActive ? 1 : 0.6,
                 }}
