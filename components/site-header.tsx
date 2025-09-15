@@ -1,12 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, easeInOut } from "framer-motion";
 
-export default function SiteHeader() {
+export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const navLinks = [
     { name: "Home", href: "#" },
@@ -25,10 +32,10 @@ export default function SiteHeader() {
         when: "beforeChildren",
         staggerChildren: 0.1,
         duration: 0.3,
-        ease: "easeInOut",
+        ease: easeInOut,
       },
     },
-    exit: { y: "-100%", opacity: 0, transition: { duration: 0.25, ease: "easeInOut" } },
+    exit: { y: "-100%", opacity: 0, transition: { duration: 0.25, ease: easeInOut } },
   };
 
   const itemVariants = {
@@ -38,15 +45,19 @@ export default function SiteHeader() {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50">
-      <div className="max-w-6xl mx-auto flex justify-between items-center px-4 py-3 backdrop-blur-xl bg-black/40 shadow-lg">
-        {/* Logo */}
-        <div className="w-12 h-12 flex items-center justify-center rounded-full text-white font-bold text-lg neon-glow">
-          LOGO
-        </div>
+    <header
+      className={`fixed top-0 w-full z-50 transition-all border-b ${
+        scrolled
+          ? "backdrop-blur-md bg-black/30 border-white/10"
+          : "bg-transparent border-white/0"
+      }`}
+    >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-2">
+          <img src="/enigma.svg" alt="enigma-logo" className="h-10 w-auto" />
+        </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex ml-4 space-x-6 items-center">
+        <nav className="hidden md:flex items-center gap-8 text-sm">
           {navLinks.map((link) =>
             link.special ? (
               <Link
