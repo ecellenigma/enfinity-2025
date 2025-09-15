@@ -3,7 +3,10 @@ import { Phone, Mail } from "lucide-react";
 
 export function SiteFooter() {
   return (
-    <footer id="contact" className="relative border-t border-white/10 bg-black/20 backdrop-blur-sm overflow-hidden">
+    <footer
+      id="contact"
+      className="relative border-t border-white/10 bg-black/20 backdrop-blur-sm overflow-hidden"
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 md:py-12">
         <div className="grid md:grid-cols-3 gap-8 items-center">
           <div className="text-center sm:text-left space-y-2 mt-1.100">
@@ -22,11 +25,18 @@ export function SiteFooter() {
           {/* Logos and Slogan - Centered */}
           <div className="flex flex-col items-center justify-center space-y-4">
             <div className="flex flex-col items-center">
-              <img
-                src="/enigma.svg"
-                alt="enigma-logo"
-                className="w-[30vw] md:w-24 lg:w-36 h-auto"
-              />
+              <div className="flex space-x-4 mb-2 items-end">
+                <img
+                  src="/enigma.png"
+                  alt="enigma-logo"
+                  className="w-[30vw] md:w-24 lg:w-36 h-auto"
+                />
+                <img
+                  src="/nitte-compact.png"
+                  alt="nitte-compact-logo"
+                  className="w-[28vw] md:w-20 lg:w-32 h-auto -mb-0.5"
+                />
+              </div>
               <img
                 src="/blackbacklogo.svg"
                 alt="Enfinity Logo"
