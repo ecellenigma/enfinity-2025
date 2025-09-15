@@ -77,6 +77,13 @@ export default function Page() {
             </div>
           </div>
         </section>
+        <section className="college-branding flex justify-center mb-4 px-4">
+          <img
+            src="/nmit-white.png"
+            alt="NMIT Logo"
+            className="w-full h-auto max-w-md lg:max-w-lg"
+          />
+        </section>
         {/* Counter */}
         <div className="counter flex flex-col items-center justify-center">
           <Counters startDate={EVENT_START_DATE} endDate={EVENT_END_DATE} />

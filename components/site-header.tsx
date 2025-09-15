@@ -54,7 +54,7 @@ export function SiteHeader() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <img src="/enigma.svg" alt="enigma-logo" className="h-10 w-auto" />
+          <img src="/enigma.png" alt="enigma-logo" className="h-10 w-auto" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm">
