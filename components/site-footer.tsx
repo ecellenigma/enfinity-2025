@@ -3,7 +3,7 @@ import { Phone, Mail } from "lucide-react";
 
 export function SiteFooter() {
   return (
-    <footer className="relative border-t border-white/10 bg-black/20 backdrop-blur-sm overflow-hidden">
+    <footer id="contact" className="relative border-t border-white/10 bg-black/20 backdrop-blur-sm overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 md:py-12">
         <div className="grid md:grid-cols-3 gap-8 items-center">
           <div className="text-center sm:text-left space-y-2 mt-1.100">

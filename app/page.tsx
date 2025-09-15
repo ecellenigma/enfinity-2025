@@ -7,12 +7,12 @@ import {
 import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { OrbitScene } from "@/components/orbit-scene";
-import { PreviousEvents } from "@/components/previous-events";
 import { Sponsors } from "@/components/sponsors";
 import { SiteFooter } from "@/components/site-footer";
 import Timeline from "@/components/event-timeline";
 import Counters from "@/components/counter";
 import { EventStatusChip } from "@/components/event-status-chip";
+import EventCarousel from "@/components/eventcarousel";
 
 const EVENT_START_DATE = new Date("2025-10-09T00:00:00");
 const EVENT_END_DATE = new Date("2025-10-11T10:00:00");
@@ -20,17 +20,17 @@ const EVENT_END_DATE = new Date("2025-10-11T10:00:00");
 export default function Page() {
   return (
     <>
-        <div className="fixed pointer-events-none w-screen h-screen inset-0 z-10">
-          <div className="nebula nebula-1" />
-          <div className="nebula nebula-2" />
-          <div className="nebula nebula-3" />
-        </div>
+      <div className="fixed pointer-events-none w-screen h-screen inset-0 z-10">
+        <div className="nebula nebula-1" />
+        <div className="nebula nebula-2" />
+        <div className="nebula nebula-3" />
+      </div>
       <SiteHeader />
       <main className="min-h-screen text-white relative overflow-hidden">
         {/* Background nebula glows */}
 
         {/* Hero */}
-        <section className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-16 md:pt-24 pb-16 md:pb-24">
+        <section className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-24 md:pt-32 pb-16 md:pb-24">
           <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-10 items-center">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-3">
@@ -88,21 +88,20 @@ export default function Page() {
           className="relative max-w-6xl mx-auto px-4 pt-8 sm:px-6 pb-20"
         >
           <h2 className="section-title">Timeline</h2>
-          <Timeline/>
+          <Timeline />
         </section>
         {/* Previous Events */}
         <section
           id="events"
           className="relative max-w-6xl mx-auto px-4 pt-8 sm:px-6 pb-20"
         >
-          <h2 className="section-title">Previous Events</h2>
-          <PreviousEvents />
+          <EventCarousel />
         </section>
 
         {/* Sponsors */}
         <section
           id="sponsors"
-          className="relative max-w-6xl mx-auto pt-8 px-4 sm:px-6 pb-20"
+          className="relative max-w-6xl mx-auto pt-24 px-4 sm:px-6 pb-20"
         >
           <h2 className="section-title">Sponsors</h2>
           <Sponsors />
