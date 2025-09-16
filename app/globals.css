@@ -304,17 +304,17 @@
         rgba(255, 255, 255, 0.5),
         rgba(255, 255, 255, 0) 45%
       ),
-      linear-gradient(135deg, var(--c-grad-1-start), var(--c-grad-1-end));
-    box-shadow: 0 20px 60px rgba(167, 60, 255, 0.25),
-      0 0 80px rgba(232, 51, 102, 0.25);
-    filter: saturate(1.1);
+      linear-gradient(135deg, #6a1b99, #8e24aa 60%, #c2185b);
+    box-shadow: 0 20px 60px rgba(106, 27, 153, 0.35),
+      0 0 80px rgba(106, 27, 153, 0.25);
+    filter: saturate(1.15);
   }
 
   .glow-orb {
     background: radial-gradient(
       closest-side,
-      rgba(167, 60, 255, 0.55),
-      rgba(232, 51, 102, 0.45),
+      rgba(106, 27, 153, 0.6),
+      rgba(142, 36, 170, 0.4),
       transparent 70%
     );
     filter: blur(8px);
