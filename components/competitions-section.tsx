@@ -130,19 +130,7 @@ const CompetitionCard: React.FC<{
       >
         <div className="h-full flex flex-col justify-between">
           <div>
-            <div className="flex justify-between items-start mb-3">
-              <h3 className="text-lg font-bold text-white">{competition.title}</h3>
-              <button
-                className="md:hidden text-white/60 hover:text-white text-xl leading-none"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  onToggle()
-                }}
-                aria-label="Close details"
-              >
-                ×
-              </button>
-            </div>
+            <h3 className="text-lg font-bold text-white mb-3">{competition.title}</h3>
             <p className="text-white/80 text-sm leading-relaxed mb-4">{competition.description}</p>
           </div>
           
