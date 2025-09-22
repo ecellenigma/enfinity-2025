@@ -25,7 +25,7 @@ export function LoadingOverlay() {
 
     return (
         <div
-            className="fixed inset-0 z-500 flex items-center justify-center bg-space transition-opacity duration-400 ease-out pointer-events-none"
+            className="fixed inset-0 top-0 left-0 right-0 bottom-0 w-screen h-screen z-500 flex items-center justify-center bg-space transition-opacity duration-400 ease-out pointer-events-none"
             style={{ opacity }}
         >
             <img
