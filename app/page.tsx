@@ -10,12 +10,14 @@ import { OrbitScene } from "@/components/orbit-scene";
 import { Sponsors } from "@/components/sponsors";
 import { SiteFooter } from "@/components/site-footer";
 import Timeline from "@/components/event-timeline";
+import EnfinityTimeline from "@/components/enfinity-timeline";
+import CompetitionsSection from "@/components/competitions-section";
 import Counters from "@/components/counter";
 import { EventStatusChip } from "@/components/event-status-chip";
 import EventCarousel from "@/components/eventcarousel";
 
-const EVENT_START_DATE = new Date("2025-10-09T00:00:00");
-const EVENT_END_DATE = new Date("2025-10-11T10:00:00");
+const EVENT_START_DATE = new Date(1760067000000); // Oct 10, 2025, 09:00 AM IST
+const EVENT_END_DATE = new Date(1760182200000); // Oct 11, 2025, 05:00 PM IST
 
 export default function Page() {
   return (
@@ -33,6 +35,13 @@ export default function Page() {
         <section className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-24 md:pt-32 pb-16 md:pb-24">
           <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-10 items-center">
             <div className="space-y-6">
+              <div className="flex justify-center md:justify-start mb-4">
+                <img
+                  src="/nmit-white.png"
+                  alt="NMIT Logo"
+                  className="w-full h-auto max-w-xs lg:max-w-sm"
+                />
+              </div>
               <div className="inline-flex items-center gap-3">
                 <EventStatusChip
                   startDate={EVENT_START_DATE}
@@ -77,47 +86,49 @@ export default function Page() {
             </div>
           </div>
         </section>
-        <section className="college-branding flex justify-center mb-4 px-4">
-          <img
-            src="/nmit-white.png"
-            alt="NMIT Logo"
-            className="w-full h-auto max-w-md lg:max-w-lg"
-          />
-        </section>
         {/* Counter */}
         <div className="counter flex flex-col items-center justify-center">
           <Counters startDate={EVENT_START_DATE} endDate={EVENT_END_DATE} />
         </div>
 
-        {/* TODO: Timeline */}
+        {/* Timeline */}
         <section
           id="timeline"
           className="relative max-w-6xl mx-auto px-4 pt-8 sm:px-6 pb-20"
         >
-          <h2 className="section-title">Timeline</h2>
-          <Timeline />
+          {/* <h2 className="section-title">Timeline</h2> */}
+          <EnfinityTimeline />
         </section>
-        {/* Previous Events */}
+
+        {/* Competitions */}
         <section
           id="events"
+          className="relative max-w-6xl mx-auto px-4 pt-8 sm:px-6 pb-20"
+        >
+          <CompetitionsSection />
+        </section>
+
+        {/* Previous Events */}
+        <section
+          id="previous-events"
           className="relative max-w-6xl mx-auto px-4 pt-8 sm:px-6 pb-20"
         >
           <EventCarousel />
         </section>
 
         {/* Sponsors */}
-        <section
+        {/* <section
           id="sponsors"
           className="relative max-w-6xl mx-auto pt-24 px-4 sm:px-6 pb-20"
         >
           <h2 className="section-title">Sponsors</h2>
           <Sponsors />
-        </section>
+        </section> */}
 
         {/* FAQs */}
         <section
           id="faqs"
-          className="relative max-w-3xl lg:max-w-5xl mx-auto pt-8 px-4 sm:px-6 pb-24"
+          className="relative max-w-3xl lg:max-w-5xl mx-auto pt-32 md:pt-40 px-4 sm:px-6 pb-24"
         >
           <h2 className="section-title text-center">FAQs</h2>
           <div className="w-full rounded-2xl p-6 md:p-8 bg-white/5 border border-white/10 backdrop-blur-md shadow-lg md:shadow-[0_0_40px_rgba(167,60,255,0.1)] relative overflow-hidden">
