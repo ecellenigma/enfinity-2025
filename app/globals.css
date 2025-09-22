@@ -226,12 +226,13 @@
   .btn-gradient {
     background: linear-gradient(
       135deg,
-      var(--c-grad-1-start),
-      var(--c-grad-1-end)
+      oklch(0.7 0.15 280),
+      oklch(0.65 0.2 320),
+      oklch(0.6 0.25 350)
     );
     color: var(--c-white);
-    box-shadow: 0 10px 30px rgba(232, 51, 102, 0.35),
-      inset 0 0 20px rgba(167, 60, 255, 0.25);
+    box-shadow: 0 10px 30px oklch(0.5 0.2 320 / 0.4),
+      inset 0 0 20px oklch(0.7 0.15 280 / 0.3);
     position: relative;
     overflow: hidden;
   }
@@ -242,7 +243,7 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(255, 255, 255, 0.25),
+      oklch(1 0 0 / 0.3),
       transparent
     );
     transform: translateX(-100%);
