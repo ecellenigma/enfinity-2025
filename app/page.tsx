@@ -125,7 +125,6 @@ export default function Page() {
           id="timeline"
           className="relative max-w-6xl mx-auto px-4 pt-8 sm:px-6 pb-6"
         >
-          {/* <h2 className="section-title">Timeline</h2> */}
           <EnfinityTimeline />
         </section>
 
