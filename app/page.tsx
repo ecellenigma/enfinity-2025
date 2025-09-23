@@ -19,6 +19,34 @@ import EventCarousel from "@/components/eventcarousel";
 const EVENT_START_DATE = new Date(1760067000000); // Oct 10, 2025, 09:00 AM IST
 const EVENT_END_DATE = new Date(1760182200000); // Oct 11, 2025, 05:00 PM IST
 
+const faqs = [
+  {
+    question: "What is Enfinity?",
+    answer:
+      "Enfinity is the Flagship Event organised by E-Cell NMIT. It's a premier event that brings together students, aspiring entrepreneurs, and industry experts for a series of competitions, insightful speaker sessions, and networking opportunities.",
+  },
+  {
+    question: "Who is eligible to participate in the events?",
+    answer:
+      "Participation is typically open to all college students, regardless of their year or field of study. We welcome anyone with a passion for innovation and entrepreneurship to join our events.",
+  },
+  {
+    question: "Is there a registration fee to attend Enfinity?",
+    answer:
+      "This can vary by event. While some speaker sessions or workshops may be free to attend, competitive events might have a nominal registration fee. Please refer to the specific event page for details on pricing.",
+  },
+  {
+    question: "What are the main highlights or competitions in Enfinity?",
+    answer:
+      'Enfinity features a diverse range of events, including our flagship business idea competition "Business Triathlon" a strategic investment challenge called "Reverse Shark Tank," and a Startup Expo. The summit is designed to test your business acumen, strategic thinking, and innovative spirit.',
+  },
+  {
+    question: "How can I register for a specific event?",
+    answer:
+      "You can register for all our events directly through the links provided on our website. Simply navigate to the event you're interested in and follow the registration instructions. Make sure to sign up before the deadline!",
+  },
+];
+
 export default function Page() {
   return (
     <>
@@ -53,7 +81,7 @@ export default function Page() {
               </div>
               <div className="flex justify-center md:justify-start">
                 <img
-                  src="/blackbacklogo.svg"
+                  src="/blackbglogo.png"
                   alt="Logo"
                   className="w-full max-w-[350px] lg:max-w-[450px] xl:max-w-[500px] h-auto"
                   aria-hidden="true"
@@ -67,7 +95,7 @@ export default function Page() {
 
               <div className="flex items-center gap-4">
                 <Link
-                  href="#register"
+                  href="https://forms.fillout.com/t/jsZauYu41tus"
                   className="btn-gradient px-6 py-3 rounded-full text-sm font-semibold shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
                 >
                   Register
@@ -137,24 +165,16 @@ export default function Page() {
               aria-hidden="true"
             />
             <Accordion type="single" collapsible className="w-full">
-              {[
-                "Question 1",
-                "Question 2",
-                "Question 3",
-                "Question 4",
-                "Question 5",
-              ].map((q, idx) => (
+              {faqs.map((faq, idx) => (
                 <AccordionItem
                   key={idx}
                   value={`item-${idx}`}
                   className="border-white/10"
                 >
-                  <AccordionTrigger className="text-left">{q}</AccordionTrigger>
-                  <AccordionContent>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </AccordionContent>
+                  <AccordionTrigger className="text-left">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent>{faq.answer}</AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>

@@ -12,29 +12,28 @@ interface Event {
 }
 
 const events: Event[] = [
-  {
-    name: "Ideathon 2024",
-    description:
-      "A 24-hour hackathon focused on innovative solutions to real-world problems. Teams collaborate intensively to design, prototype, and present their solutions.",
-    link: "https://www.ideathon.com",
-    image: "/image 1.png",
-  },
-  {
-    name: "4X Marathon",
-    description:
-      "Explore, Expand, Exploit, and Exterminate in this thrilling strategic coding competition. Participants dive into multiple problem-solving domains that test skill and endurance.",
-    link: "https://www.4xmarathon.com",
-    image: "/mar.png",
-  },
-  {
-    name: "Enfinity 2022",
-    description:
-      "Our flagship annual tech conference featuring renowned speakers, interactive workshops, and networking sessions that highlight the future of technology.",
-    link: "https://www.enfinity.com",
-    image: "/image 2.png",
-  },
-];
-
+    {
+      name: "Ideathon 2025",
+      description:
+        "Our flagship event in Anaadyanta, the annual national techno-cultural festival of NMIT. Competitive minds pitch groundbreaking ideas in two separate tracks: Ideation and Prototype.",
+      link: "https://ideathon6-0.ecellnmit.in",
+      image: "/Ideathon6-0.png",
+    },
+    {
+      name: "4X Marathon",
+      description:
+        "A 4KM college-wide marathon hosted to champion Green Innovation and Green Entrepreneurship",
+      link: "",
+      image: "/mar.png",
+    },
+    {
+      name: "Enfinity 2022",
+      description:
+        "Our premier E-Summit, bringing together the brightest minds in entrepreneurship for a series of insightful events and competitions.",
+      link: "https://enfinity.ecellnmit.in",
+      image: "/image 2.png",
+    },
+  ];
 export default function EventCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [windowWidth, setWindowWidth] = useState(1024);

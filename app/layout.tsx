@@ -18,7 +18,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "ENFINITY",
   description: "Enigma presents ENFINITY",
-    generator: 'v0.app'
+
+  icons: {
+    icon: "/blackbackgrounglogo.ico",
+  },
 }
 
 export default function RootLayout({
@@ -27,8 +30,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-      <body className="font-sans bg-space">
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning>
+      <body className="font-sans bg-space" suppressHydrationWarning>
         <LoadingOverlay />
         {children}
       </body>

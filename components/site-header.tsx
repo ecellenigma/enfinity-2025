@@ -20,7 +20,8 @@ export function SiteHeader() {
     { name: "Events", href: "#events" },
     { name: "Sponsors", href: "#sponsors" },
     { name: "Contact Us", href: "#contact" },
-    { name: "Register", href: "#register", special: true },
+    { name: "Brochure", href: "/brochure.pdf" },
+    { name: "Register", href: "https://forms.fillout.com/t/jsZauYu41tus", special: true },
   ];
 
   const containerVariants = {
@@ -53,30 +54,38 @@ export function SiteHeader() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <img src="/blackbacklogo.svg" alt="enfinity-logo" className="h-10 w-auto" />
+        <Link href="/" className="flex items-center space-x-2">
+          <img src="/blackbglogo.png" alt="enfinity-logo" className="h-10 w-auto" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm">
-          {navLinks.map((link) =>
-            link.special ? (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="btn-gradient px-4 py-2 rounded-full text-white text-sm md:text-base neon-glow"
-              >
-                {link.name}
-              </Link>
-            ) : (
+          {navLinks.map((link) => {
+            const isBrochure = link.name === "Brochure";
+            if (link.special) {
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="btn-gradient px-4 py-2 rounded-full text-white text-sm md:text-base neon-glow"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {link.name}
+                </Link>
+              );
+            }
+            return (
               <Link
                 key={link.name}
                 href={link.href}
                 className="nav-link text-white/80 hover:text-white text-sm md:text-base"
+                target={isBrochure ? "_blank" : undefined}
+                rel={isBrochure ? "noopener noreferrer" : undefined}
               >
                 {link.name}
               </Link>
-            )
-          )}
+            );
+          })}
         </nav>
 
         {/* Hamburger button */}
@@ -98,29 +107,37 @@ export function SiteHeader() {
             exit="exit"
             className="md:hidden w-full glass backdrop-blur-xl bg-black/40 flex flex-col items-center py-6 space-y-4 border-t border-white/20 shadow-neon"
           >
-            {navLinks.map((link) =>
-              link.special ? (
-                <motion.div key={link.name} variants={itemVariants} className="w-full flex justify-center">
-                  <Link
-                    href={link.href}
-                    className="btn-gradient px-6 py-3 rounded-full text-white text-lg neon-glow"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
-                </motion.div>
-              ) : (
+            {navLinks.map((link) => {
+              const isBrochure = link.name === "Brochure";
+              if (link.special) {
+                return (
+                  <motion.div key={link.name} variants={itemVariants} className="w-full flex justify-center">
+                    <Link
+                      href={link.href}
+                      className="btn-gradient px-6 py-3 rounded-full text-white text-lg neon-glow"
+                      onClick={() => setIsOpen(false)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
+                );
+              }
+              return (
                 <motion.div key={link.name} variants={itemVariants} className="w-full flex justify-center">
                   <Link
                     href={link.href}
                     className="nav-link text-white/80 hover:text-white text-lg"
                     onClick={() => setIsOpen(false)}
+                    target={isBrochure ? "_blank" : undefined}
+                    rel={isBrochure ? "noopener noreferrer" : undefined}
                   >
                     {link.name}
                   </Link>
                 </motion.div>
-              )
-            )}
+              );
+            })}
           </motion.div>
         )}
       </AnimatePresence>

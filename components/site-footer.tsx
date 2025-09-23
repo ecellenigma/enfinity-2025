@@ -14,7 +14,9 @@ export function SiteFooter() {
             <div className="font-bold text-2xl text-white">CONTACT US</div>
             <div className="flex items-center justify-center sm:justify-start space-x-3 text-white/60">
               <Phone className="w-6 h-6" />
-              <span>1-514-456-2753</span>
+              <span>+91 91401 50118</span>
+              <br />
+              <span>+91 97384 87835</span>
             </div>
             <div className="flex items-center justify-center sm:justify-start space-x-3 text-white/60">
               <Mail className="w-6 h-6" />
@@ -38,9 +40,9 @@ export function SiteFooter() {
                 />
               </div>
               <img
-                src="/blackbacklogo.svg"
+                src="/blackbglogo.png"
                 alt="Enfinity Logo"
-                className="w-[70vw] md:w-56 lg:w-84 h-auto my-2"
+                className="h-12 w-auto"
               />
               <div className="w-full text-center mt-2 text-xs text-white/60">
                 © {new Date().getFullYear()} Enigma • ENFINITY. All rights
@@ -71,18 +73,10 @@ export function SiteFooter() {
             >
               <img src="/insta.svg" alt="" />
             </Link>
-            <Link href="#" className="text-white/60 hover:text-white">
-              <img src="/twitter.svg" alt="" />
-            </Link>
-            <Link href="#" className="text-white/60 hover:text-white">
+            <Link href="https://www.linkedin.com/company/enigma-e-cell-nmit/" className="text-white/60 hover:text-white">
               <img src="/linkedin.svg" alt="" />
             </Link>
-            <Link href="#" className="text-white/60 hover:text-white">
-              <img src="/facebook.svg" alt="" />
-            </Link>
-            <Link href="#" className="text-white/60 hover:text-white">
-              <img src="/youtube.svg" alt="" />
-            </Link>
+            
           </div>
         </div>
 
