@@ -15,6 +15,7 @@ import CompetitionsSection from "@/components/competitions-section";
 import Counters from "@/components/counter";
 import { EventStatusChip } from "@/components/event-status-chip";
 import EventCarousel from "@/components/eventcarousel";
+import { Prizepool } from "@/components/prizepool";
 
 const EVENT_START_DATE = new Date(1760067000000); // Oct 10, 2025, 09:00 AM IST
 const EVENT_END_DATE = new Date(1760182200000); // Oct 11, 2025, 05:00 PM IST
@@ -122,10 +123,21 @@ export default function Page() {
         {/* Timeline */}
         <section
           id="timeline"
-          className="relative max-w-6xl mx-auto px-4 pt-8 sm:px-6 pb-20"
+          className="relative max-w-6xl mx-auto px-4 pt-8 sm:px-6 pb-6"
         >
           {/* <h2 className="section-title">Timeline</h2> */}
           <EnfinityTimeline />
+        </section>
+
+        {/* Prizepool */}
+        <section
+          id="prizepool"
+          className="relative max-w-6xl mx-auto px-4 sm:px-6 py-16 text-center"
+        >
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 gradient-text">
+          Prizepool
+        </h2>
+          <Prizepool />
         </section>
 
         {/* Competitions */}
