@@ -12,6 +12,7 @@ interface Competition {
   keySkills: string[]
   image: string
   price: string
+  prize: string
   isSignature?: boolean
 }
 
@@ -23,6 +24,7 @@ const competitions: Competition[] = [
     keySkills: ["Resilience", "Teamwork", "Rapid Prototyping"],
     image: "/efv.png",
     price: "₹750",
+    prize: "₹50,000",
     isSignature: true
   },
   {
@@ -31,7 +33,8 @@ const competitions: Competition[] = [
     teamSize: "4-6 Members",
     keySkills: ["Strategic Thinking", "Crisis Management"],
     image: "/3.png",
-    price: "₹750"
+    price: "₹750",
+    prize: "₹25,000"
   },
   {
     title: "Ten Minute Millionaire",
@@ -39,7 +42,8 @@ const competitions: Competition[] = [
     teamSize: "1-2 Members",
     keySkills: ["Pitching", "Persuasion", "Grace Under Pressure"],
     image: "/4.png",
-    price: "₹300"
+    price: "₹300",
+    prize: "VC's Funding"
   },
   {
     title: "Reverse Shark Tank",
@@ -47,7 +51,8 @@ const competitions: Competition[] = [
     teamSize: "3-5 Members",
     keySkills: ["Creative Problem-Solving", "Innovation"],
     image: "/mmxz.png",
-    price: "₹300"
+    price: "₹300",
+    prize: "₹15,000"
   },
   {
     title: "Business Treasure Hunt",
@@ -55,7 +60,8 @@ const competitions: Competition[] = [
     teamSize: "3-4 Members",
     keySkills: ["Problem-Solving", "Teamwork"],
     image: "/bth.png",
-    price: "₹300"
+    price: "₹300",
+    prize: "₹5,000"
   }
 ]
 
@@ -140,13 +146,13 @@ const CompetitionCard: React.FC<{
           showDetails ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
       >
-        <div className="h-full flex flex-col justify-between">
-          <div>
+        <div className="h-full flex flex-col">
+          <div className="flex-grow overflow-y-auto pr-2">
             <h3 className="text-lg font-bold text-white mb-3 gradient-text">{competition.title}</h3>
             <p className="text-white/80 text-sm leading-relaxed mb-4">{competition.description}</p>
           </div>
           
-          <div>
+          <div className="flex-shrink-0 pt-4 border-t border-white/10">
             <div className="space-y-3">
               <div className="flex items-center gap-2">
                 <Users className="w-4 h-4 text-white/60" />
@@ -167,9 +173,15 @@ const CompetitionCard: React.FC<{
                   </div>
                 </div>
 
-                <div className="text-right">
-                  <span className="text-white/60 text-xs uppercase tracking-wide block mb-2">Entry Fee</span>
-                  <span className="text-xl font-bold text-white">{competition.price}</span>
+                <div className="text-right space-y-2">
+                  <div>
+                    <span className="text-white/60 text-xs uppercase tracking-wide block">Entry Fee</span>
+                    <span className="text-lg font-bold text-white">{competition.price}</span>
+                  </div>
+                  <div>
+                    <span className="text-white/60 text-xs uppercase tracking-wide block">Prize Pool</span>
+                    <span className="text-lg font-bold text-white gradient-text">{competition.prize}</span>
+                  </div>
                 </div>
               </div>
             </div>
