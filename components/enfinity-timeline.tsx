@@ -44,13 +44,13 @@ const timelineData: TimelineDay[] = [
         time: "11:30 AM - 1:30 PM",
         title: "Reverse Shark Tank",
         description: "Budding entrepreneurs grill a panel of investors to understand their investment philosophies.",
-        location: "APJ Seminar Hall"
+        location: "APJ seminar hall"
       },
       {
         time: "11:45 AM - 1:45 PM",
         title: "TED Talk: The Future of Sustainable Startups",
         description: "Inspiring talk about sustainable business practices and environmental entrepreneurship.",
-        location: "MV Auditorium",
+        location: "M V Audi",
         type: "ted"
       },
       {
@@ -63,45 +63,38 @@ const timelineData: TimelineDay[] = [
         time: "3:00 PM - 5:00 PM",
         title: "Stock Grow",
         description: "Stock market simulation game where participants can trade and learn investment strategies.",
-        location: "Computer Lab"
+        location: "APJ seminar hall"
       },
       {
-        time: "5:00 PM - 6:00 PM",
-        title: "Networking Session & Tea Break",
-        description: "Casual networking session with tea and snacks.",
-        location: "Foyer"
+        time: "3:30 PM - 5:30 PM",
+        title: "TED Talk: AI and the Next Wave of Entrepreneurship",
+        description: "A talk on the impact of AI on the future of entrepreneurship.",
+        location: "M V Audi",
+        type: "ted"
       },
       {
-        time: "6:00 PM - 7:00 PM",
-        title: "Panel Discussion: Startup Ecosystem in India",
-        description: "Industry leaders discuss the current state and future of Indian startup ecosystem.",
-        location: "MV Auditorium"
+        time: "5:00 PM - 5:30 PM",
+        title: "High Tea",
+        description: "A short break for tea, coffee, and snacks.",
+        location: "Main Lobby",
       },
       {
-        time: "7:30 PM - 8:30 PM",
-        title: "Cultural Evening",
-        description: "Entertainment program featuring music and performances.",
-        location: "MV Auditorium"
+        time: "5:00 PM - 7:00 PM",
+        title: "10 Min Million",
+        description: "An elevator pitch competition where contestants have 10 minutes to convince investors.",
+        location: "BBC"
       },
       {
-        time: "8:30 PM - 9:00 PM",
-        title: "Case Study Briefing",
-        description: "Teams gather to receive the case problem and rules for the overnight challenge.",
-        location: "APJ Seminar Hall",
-        type: "marathon"
+        time: "8:00 PM - 9:00 PM",
+        title: "Music Night",
+        description: "A performance by the college music club to cap off the evening.",
+        location: "BBC"
       },
       {
-        time: "9:00 PM - 7:00 AM (Next Day)",
-        title: "Overnight Case Study Challenge",
-        description: "Teams work through the night to analyze the problem and prepare their solution and presentation.",
-        location: "APJ Seminar Hall",
-        type: "marathon"
-      },
-      {
-        time: "7:00 AM",
-        title: "Submission Deadline",
-        description: "Final deadline for teams to submit their presentation decks.",
-        location: "APJ Seminar Hall",
+        time: "12:00 AM (Midnight)",
+        title: "Business Triathlon: Case Study Release",
+        description: "The overnight marathon challenge kicks off as teams receive their case problems.",
+        location: "Idea Lab / Archi Seminar Lab",
         type: "marathon"
       }
     ]
@@ -111,29 +104,30 @@ const timelineData: TimelineDay[] = [
     title: "Day 2",
     events: [
       {
+        time: "12:00 AM - 5:00 AM",
+        title: "Business Triathlon: Overnight Marathon",
+        description: "Teams work through the night to analyze the problem and prepare their solution and presentation.",
+        location: "Idea Lab / Archi Seminar Lab",
+        type: "marathon"
+      },
+      {
+        time: "7:00 AM",
+        title: "Business Triathlon: Submission Deadline",
+        description: "Final deadline for teams to submit their presentation decks.",
+        location: "Idea Lab / Archi Seminar Lab",
+        type: "marathon"
+      },
+      {
         time: "8:00 AM - 9:00 AM",
         title: "Breakfast",
         description: "Morning refreshments for all participants.",
         location: "Dining Hall"
       },
       {
-        time: "9:00 AM - 11:00 AM",
-        title: "Case Study Presentations",
-        description: "Teams present their solutions to a panel of judges.",
-        location: "MV Auditorium"
-      },
-      {
-        time: "11:00 AM - 11:30 AM",
+        time: "11:30 AM - 1:30 PM",
         title: "Treasure Hunt",
         description: "Fun event for participants to explore the campus and win prizes.",
         location: "Campus Wide"
-      },
-      {
-        time: "11:30 AM - 1:30 PM",
-        title: "TED Talk: The Psychology of a Successful Entrepreneur",
-        description: "Deep dive into the mindset and psychological traits that drive entrepreneurial success.",
-        location: "MV Auditorium",
-        type: "ted"
       },
       {
         time: "1:30 PM - 2:30 PM",
@@ -142,22 +136,35 @@ const timelineData: TimelineDay[] = [
         location: "Dining Hall"
       },
       {
-        time: "3:00 PM - 4:00 PM",
-        title: "Startup Expo & Demo Day",
-        description: "Local startups showcase their products and innovations.",
-        location: "Exhibition Hall"
+        time: "2:30 PM - 5:00 PM",
+        title: "Boardroom",
+        description: "A simulated high-stakes corporate meeting where participants tackle a crisis scenario.",
+        location: "ARCHI seminar hall"
       },
       {
-        time: "4:00 PM - 5:00 PM",
-        title: "Awards Ceremony & Closing",
-        description: "Recognition of winners and closing remarks.",
-        location: "MV Auditorium"
+        time: "3:00 PM - 5:30 PM",
+        title: "Business Triathlon: Final Presentations",
+        description: "Shortlisted teams present their innovative solutions to a panel of judges.",
+        location: "MV Auditorium",
+        type: "marathon"
       },
       {
-        time: "5:00 PM",
-        title: "Farewell & Networking",
-        description: "Final networking session and farewell to participants.",
-        location: "Foyer"
+        time: "5:00 PM - 7:00 PM",
+        title: "Panel Discussion",
+        description: "An insightful discussion with a panel of industry experts.",
+        location: "BBC"
+      },
+      {
+        time: "7:00 PM - 7:30 PM",
+        title: "Valedictory & Prize Distribution",
+        description: "Concluding ceremony, guest of honor speech, and prize distribution for all competitions.",
+        location: "BBC"
+      },
+      {
+        time: "7:45 PM - 9:30 PM",
+        title: "DJ Night",
+        description: "Closing the summit with a DJ night for all attendees to celebrate.",
+        location: "BBC"
       }
     ]
   }
