@@ -20,7 +20,7 @@ interface TimelineDay {
 
 const timelineData: TimelineDay[] = [
   {
-    date: "October 10th",
+    date: "November 10th",
     title: "Day 1",
     events: [
       {
@@ -119,7 +119,7 @@ const timelineData: TimelineDay[] = [
     ]
   },
   {
-    date: "October 11th",
+    date: "November 11th",
     title: "Day 2",
     events: [
       {

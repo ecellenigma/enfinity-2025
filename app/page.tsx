@@ -17,8 +17,8 @@ import { EventStatusChip } from "@/components/event-status-chip";
 import EventCarousel from "@/components/eventcarousel";
 import { Prizepool } from "@/components/prizepool";
 
-const EVENT_START_DATE = new Date(1760067000000); // Oct 10, 2025, 09:00 AM IST
-const EVENT_END_DATE = new Date(1760182200000); // Oct 11, 2025, 05:00 PM IST
+const EVENT_START_DATE = new Date('2025-11-10T09:00:00+05:30'); // Oct 10, 2025, 09:00 AM IST
+const EVENT_END_DATE = new Date('2025-11-12T17:00:00+05:30'); // Oct 11, 2025, 05:00 PM IST
 
 const faqs = [
   {
