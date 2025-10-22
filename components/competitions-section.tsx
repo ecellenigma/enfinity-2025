@@ -14,6 +14,7 @@ interface Competition {
   price: string
   prize: string
   isSignature?: boolean
+  registrationLink?: string
 }
 
 const competitions: Competition[] = [
@@ -25,7 +26,8 @@ const competitions: Competition[] = [
     image: "/efv.png",
     price: "₹750",
     prize: "₹50,000",
-    isSignature: true
+    isSignature: true,
+    registrationLink: "https://unstop.com/competitions/the-business-triathlon-enfinity-2025-nitte-meenakshi-institute-of-technology-nmit-yelahanka-1577353" 
   },
   {
     title: "Boardroom",
@@ -34,7 +36,8 @@ const competitions: Competition[] = [
     keySkills: ["Strategic Thinking", "Crisis Management"],
     image: "/3.png",
     price: "₹750",
-    prize: "₹25,000"
+    prize: "₹25,000",
+    registrationLink: "https://unstop.com/p/the-boardroom-enfinity-2025-nitte-meenakshi-institute-of-technology-nmit-yelahanka-1577394" 
   },
   {
     title: "Ten Minute Millionaire",
@@ -43,7 +46,8 @@ const competitions: Competition[] = [
     keySkills: ["Pitching", "Persuasion", "Grace Under Pressure"],
     image: "/4.png",
     price: "₹300",
-    prize: "VC's Funding"
+    prize: "VC's Funding",
+    registrationLink: "https://unstop.com/p/ten-minute-million-enfinity-2025-nitte-meenakshi-institute-of-technology-nmit-yelahanka-1577366" 
   },
   {
     title: "Reverse Shark Tank",
@@ -52,7 +56,8 @@ const competitions: Competition[] = [
     keySkills: ["Creative Problem-Solving", "Innovation"],
     image: "/mmxz.png",
     price: "₹300",
-    prize: "₹15,000"
+    prize: "₹15,000",
+    registrationLink: "https://unstop.com/p/reverse-shark-tank-enfinity-2025-nitte-meenakshi-institute-of-technology-nmit-yelahanka-1577377" 
   },
   {
     title: "Business Treasure Hunt",
@@ -61,7 +66,8 @@ const competitions: Competition[] = [
     keySkills: ["Problem-Solving", "Teamwork"],
     image: "/bth.png",
     price: "₹300",
-    prize: "₹5,000"
+    prize: "₹5,000",
+    registrationLink: "https://unstop.com/p/business-treasure-hunt-enfinity-2025-nitte-meenakshi-institute-of-technology-nmit-yelahanka-1577401" 
   }
 ]
 
@@ -188,7 +194,7 @@ const CompetitionCard: React.FC<{
 
             <div className="mt-4">
               <Link
-                href="https://forms.fillout.com/t/jsZauYu41tus"
+                href={competition.registrationLink || "https://forms.fillout.com/t/jsZauYu41tus"}
                 className="btn-gradient block w-full text-center px-4 py-2 rounded-full text-sm font-semibold shadow-xl"
                 onClick={(e) => e.stopPropagation()} // Prevent card click from toggling
               >
@@ -249,7 +255,7 @@ export default function CompetitionsSection() {
           >
             <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-white">
               <div className="text-center md:text-left">
-                <h3 className="text-2xl md:text-3xl font-bold tracking-tight gradient-text">ALL ACCESS PASS</h3>
+                <h3 className="text-2xl md:text-3xl font-bold tracking-tight gradient-text">ALL ACCESS PASS (Team)</h3>
                 <p className="text-sm md:text-base text-white/80 mt-1">Access all competitions with a single pass and save big!</p>
               </div>
               <div className="flex items-center gap-6 mt-4 md:mt-0">
@@ -258,7 +264,7 @@ export default function CompetitionsSection() {
                   <span className="text-3xl md:text-4xl font-bold text-white gradient-text">₹1499</span>
                 </div>
                 <Link
-                  href="https://forms.fillout.com/t/jsZauYu41tus"
+                  href="https://unstop.com/p/enfinity-all-access-enfinity-2025-nitte-meenakshi-institute-of-technology-nmit-yelahanka-1577414"
                   className="btn-gradient px-6 py-3 rounded-full text-sm font-semibold shadow-xl"
                 >
                   Register Now
