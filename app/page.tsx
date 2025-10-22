@@ -96,7 +96,7 @@ export default function Page() {
 
               <div className="flex items-center gap-4">
                 <Link
-                  href="https://forms.fillout.com/t/jsZauYu41tus"
+                  href="https://unstop.com/college-fests/enfinity-2025-nitte-meenakshi-institute-of-technology-nmit-yelahanka-407327"
                   className="btn-gradient px-6 py-3 rounded-full text-sm font-semibold shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
                 >
                   Register
