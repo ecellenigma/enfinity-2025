@@ -16,6 +16,7 @@ import Counters from "@/components/counter";
 import { EventStatusChip } from "@/components/event-status-chip";
 import EventCarousel from "@/components/eventcarousel";
 import { Prizepool } from "@/components/prizepool";
+import Sponsorcarousel from "@/components/sponsorcarousel";
 
 const EVENT_START_DATE = new Date('2025-11-10T09:00:00+05:30'); // Oct 10, 2025, 09:00 AM IST
 const EVENT_END_DATE = new Date('2025-11-12T17:00:00+05:30'); // Oct 11, 2025, 05:00 PM IST
@@ -127,6 +128,11 @@ export default function Page() {
         >
           <EnfinityTimeline />
         </section>
+
+        <section className="relative max-w-6xl mx-auto px-4 pt-8 sm:px-6 pb-20">
+          <Sponsorcarousel />
+        </section>
+        
 
         {/* Prizepool */}
         <section
