@@ -18,7 +18,7 @@ export function SiteHeader() {
   const navLinks = [
     { name: "Home", href: "#" },
     { name: "Events", href: "#events" },
-    { name: "Sponsors", href: "#sponsors" },
+    { name: "Sponsors", href: "#sponsorCarousel" },
     { name: "Contact Us", href: "#contact" },
     { name: "Brochure", href: "/brochure.pdf" },
     { name: "Register", href: "https://unstop.com/college-fests/enfinity-2025-nitte-meenakshi-institute-of-technology-nmit-yelahanka-407327", special: true },

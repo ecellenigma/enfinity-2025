@@ -17,7 +17,7 @@ const sponsors: Sponsor[] = [
     link: "",
   },
   {
-    name: "BBT",
+    name: "BigBoyToyz",
     image: "/enigma_sponsors/BBT Signature_Upgraded copy.jpg",
     link: "",
   },
@@ -71,7 +71,7 @@ export default function Sponsorcarousel() {
   }, []);
 
   return (
-    <section className="w-full py-16 flex flex-col items-center relative overflow-hidden">
+    <section className="w-full py-16 flex flex-col items-center relative overflow-hidden" id="sponsorCarousel">
       <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-bold gradient-text mb-12">
         SPONSORS
       </h2>
