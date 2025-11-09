@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import { ChevronDown, ChevronUp, Clock, MapPin } from 'lucide-react'
+import scheduleData from '@/schedule.json'
 
 interface TimelineEvent {
   time: string
@@ -17,158 +18,76 @@ interface TimelineDay {
   events: TimelineEvent[]
 }
 
-const timelineData: TimelineDay[] = [
-  {
-    date: "November 10th",
-    title: "Day 1",
-    events: [
-      {
-        time: "9:00 AM - 9:45 AM",
-        title: "Guest Arrival & Registration",
-        description: "Welcoming guests, speakers, and participants. Handing out event kits.",
-        location: "Gate"
-      },
-      {
-        time: "9:45 AM - 10:30 AM",
-        title: "Inauguration Ceremony",
-        description: "Official start of the summit with lamp lighting and a welcome address.",
-        location: "MV Auditorium"
-      },
-      {
-        time: "10:30 AM - 11:30 AM",
-        title: "Keynote Address",
-        description: "An inspiring talk by our esteemed keynote speaker to set the tone for the summit.",
-        location: "MV Auditorium"
-      },
-      {
-        time: "11:30 AM - 1:30 PM",
-        title: "Reverse Shark Tank",
-        description: "Budding entrepreneurs grill a panel of investors to understand their investment philosophies.",
-        location: "APJ seminar hall"
-      },
-      {
-        time: "11:45 AM - 1:45 PM",
-        title: "TED Talk: The Future of Sustainable Startups",
-        description: "Inspiring talk about sustainable business practices and environmental entrepreneurship.",
-        location: "M V Audi",
-        type: "ted"
-      },
-      {
-        time: "1:30 PM - 2:30 PM",
-        title: "Lunch Break",
-        description: "Networking lunch for all attendees.",
-        location: "Dining Hall"
-      },
-      {
-        time: "3:00 PM - 5:00 PM",
-        title: "Stock Grow",
-        description: "Stock market simulation game where participants can trade and learn investment strategies.",
-        location: "APJ seminar hall"
-      },
-      {
-        time: "3:30 PM - 5:30 PM",
-        title: "TED Talk: AI and the Next Wave of Entrepreneurship",
-        description: "A talk on the impact of AI on the future of entrepreneurship.",
-        location: "M V Audi",
-        type: "ted"
-      },
-      {
-        time: "5:00 PM - 5:30 PM",
-        title: "High Tea",
-        description: "A short break for tea, coffee, and snacks.",
-        location: "Main Lobby",
-      },
-      {
-        time: "5:00 PM - 7:00 PM",
-        title: "10 Min Million",
-        description: "An elevator pitch competition where contestants have 10 minutes to convince investors.",
-        location: "BBC"
-      },
-      {
-        time: "8:00 PM - 9:00 PM",
-        title: "Music Night",
-        description: "A performance by the college music club to cap off the evening.",
-        location: "BBC"
-      },
-      {
-        time: "12:00 AM (Midnight)",
-        title: "Business Triathlon: Case Study Release",
-        description: "The overnight marathon challenge kicks off as teams receive their case problems.",
-        location: "Idea Lab / Archi Seminar Lab",
-        type: "marathon"
-      }
-    ]
-  },
-  {
-    date: "November 11th",
-    title: "Day 2",
-    events: [
-      {
-        time: "12:00 AM - 5:00 AM",
-        title: "Business Triathlon: Overnight Marathon",
-        description: "Teams work through the night to analyze the problem and prepare their solution and presentation.",
-        location: "Idea Lab / Archi Seminar Lab",
-        type: "marathon"
-      },
-      {
-        time: "7:00 AM",
-        title: "Business Triathlon: Submission Deadline",
-        description: "Final deadline for teams to submit their presentation decks.",
-        location: "Idea Lab / Archi Seminar Lab",
-        type: "marathon"
-      },
-      {
-        time: "8:00 AM - 9:00 AM",
-        title: "Breakfast",
-        description: "Morning refreshments for all participants.",
-        location: "Dining Hall"
-      },
-      {
-        time: "11:30 AM - 1:30 PM",
-        title: "Treasure Hunt",
-        description: "Fun event for participants to explore the campus and win prizes.",
-        location: "Campus Wide"
-      },
-      {
-        time: "1:30 PM - 2:30 PM",
-        title: "Lunch Break",
-        description: "Final networking lunch and informal discussions.",
-        location: "Dining Hall"
-      },
-      {
-        time: "2:30 PM - 5:00 PM",
-        title: "Boardroom",
-        description: "A simulated high-stakes corporate meeting where participants tackle a crisis scenario.",
-        location: "ARCHI seminar hall"
-      },
-      {
-        time: "3:00 PM - 5:30 PM",
-        title: "Business Triathlon: Final Presentations",
-        description: "Shortlisted teams present their innovative solutions to a panel of judges.",
-        location: "MV Auditorium",
-        type: "marathon"
-      },
-      {
-        time: "5:00 PM - 7:00 PM",
-        title: "Panel Discussion",
-        description: "An insightful discussion with a panel of industry experts.",
-        location: "BBC"
-      },
-      {
-        time: "7:00 PM - 7:30 PM",
-        title: "Valedictory & Prize Distribution",
-        description: "Concluding ceremony, guest of honor speech, and prize distribution for all competitions.",
-        location: "BBC"
-      },
-      {
-        time: "7:45 PM - 9:30 PM",
-        title: "DJ Night",
-        description: "Closing the summit with a DJ night for all attendees to celebrate.",
-        location: "BBC"
-      }
-    ]
-  }
-]
+// Transform schedule.json data to timeline format
+const transformScheduleData = (): TimelineDay[] => {
+  const days = scheduleData.days.map((day) => {
+    const allEvents: TimelineEvent[] = [];
+    
+    // Add main events and TED talks
+    day.tracks.forEach((track) => {
+      track.events.forEach((event) => {
+        allEvents.push({
+          time: event.time,
+          title: event.activity,
+          description: event.description || '',
+          location: event.location,
+          type: track.trackName === 'TED Talks' ? 'ted' : 'event'
+        });
+      });
+    });
+
+    // Add special overnight events for Day 2
+    if (day.day === 2) {
+      scheduleData.overnightEvent.timeline.forEach((marathonEvent: any) => {
+        if (marathonEvent.day === 2) {
+          allEvents.push({
+            time: marathonEvent.timing,
+            title: marathonEvent.activity,
+            description: marathonEvent.description,
+            location: marathonEvent.location,
+            type: 'marathon'
+          });
+        }
+      });
+    }
+
+    // Sort events by time (handling midnight/AM/PM properly)
+    allEvents.sort((a, b) => {
+      const parseTime = (timeStr: string) => {
+        const time = timeStr.split(' - ')[0].trim();
+        
+        // Handle midnight times
+        if (time.includes('12:00 AM') || time === '12:00 AM') {
+          return 0;
+        }
+        
+        const match = time.match(/(\d+):(\d+)\s*(AM|PM)/i);
+        if (!match) return 999;
+        
+        let hours = parseInt(match[1]);
+        const minutes = parseInt(match[2]);
+        const period = match[3].toUpperCase();
+        
+        if (period === 'AM' && hours === 12) hours = 0;
+        if (period === 'PM' && hours !== 12) hours += 12;
+        
+        return hours * 60 + minutes;
+      };
+      
+      return parseTime(a.time) - parseTime(b.time);
+    });
+
+    return {
+      date: day.date,
+      title: `Day ${day.day}`,
+      events: allEvents
+    };
+  });
+
+  return days;
+};
+
+const timelineData = transformScheduleData();
 
 const EventCard: React.FC<{ event: TimelineEvent; index: number; isLeft: boolean }> = ({ event, index, isLeft }) => {
   return (

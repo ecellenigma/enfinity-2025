@@ -1,0 +1,185 @@
+{
+    "eventName": "Enfinity: Annual E-Summit",
+    "days": [
+      {
+        "day": 1,
+        "date": "November 10th",
+        "tracks": [
+          {
+            "trackName": "Main Events",
+            "events": [
+              {
+                "time": "9:00 AM - 9:45 AM",
+                "activity": "Guest Arrival & Registration",
+                "description": "Welcoming guests, speakers, and participants. Handing out event kits.",
+                "judgesGuests": [],
+                "location": "NMIT, Bengaluru"
+              },
+              {
+                "time": "9:45 AM - 10:30 AM",
+                "activity": "Inauguration Ceremony",
+                "description": "Official start of the summit with lamp lighting and a welcome address.",
+                "judgesGuests": [],
+                "location": "MV Auditorium"
+              },
+              {
+                "time": "10:30 AM - 11:30 AM",
+                "activity": "Keynote Address",
+                "description": "An inspiring talk by our esteemed keynote speaker to set the tone for the summit.",
+                "judgesGuests": ["Sundaygrids", "Ireate"],
+                "location": "MV Auditorium"
+              },
+              {
+                "time": "12:30 PM - 2:30 PM",
+                "activity": "Reverse Shark Tank",
+                "description": "Budding entrepreneurs grill a panel of investors to understand their investment philosophies.",
+                "judgesGuests": ["Ganesh Kumar (Sensara Automation)"],
+                "location": "ARJ Seminar Hall"
+              },
+              {
+                "time": "2:30 PM - 3:30 PM",
+                "activity": "Lunch Break",
+                "description": "Networking lunch for all attendees.",
+                "judgesGuests": [],
+                "location": "Dining Hall"
+              },
+              {
+                "time": "5:00 PM - 7:00 PM",
+                "activity": "10 Min Million",
+                "description": "An elevator pitch competition where contestants have 10 minutes to convince investors.",
+                "judgesGuests": ["Manish Dsouza", "Sayanee Bhowmik", "Srinivas", "Sarkar"],
+                "location": "BBC (Basketball Court)"
+              },
+              {
+                "time": "5:00 PM - 5:30 PM",
+                "activity": "High Tea",
+                "description": "A short break for tea, coffee, and snacks.",
+                "judgesGuests": [],
+                "location": "Main Lobby"
+              },
+              {
+                "time": "7:00 PM - x",
+                "activity": "Jamming Session",
+                "description": "Live music jamming session featuring local bands and student performers. Unwind with great music and connect with fellow attendees.",
+                "judgesGuests": [],
+                "location": "BBC (Basketball Court)"
+              }
+            ]
+          },
+          {
+            "trackName": "TED Talks",
+            "events": [
+              {
+                "time": "11:45 AM - 1:00 PM",
+                "activity": "TED Talk: The Psychology of a Successful Pitch",
+                "description": "An insightful talk exploring the psychological aspects of delivering a winning pitch to investors and stakeholders.",
+                "judgesGuests": ["Maythri Kumar"],
+                "location": "Sir M.V. Rao Auditorium"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "date": "November 11th",
+        "tracks": [
+          {
+            "trackName": "Main Events",
+            "events": [
+              {
+                "time": "10:30 AM - 12:30 PM",
+                "activity": "Treasure Hunt",
+                "description": "Fun event",
+                "judgesGuests": [],
+                "location": "TBD"
+              },
+              {
+                "time": "1:00 PM - 1:30 PM",
+                "activity": "Boardroom Briefing",
+                "description": "Briefing the event rules and giving problem statement.",
+                "judgesGuests": [],
+                "location": "TBD"
+              },
+              {
+                "time": "1:30 PM - 2:30 PM",
+                "activity": "Lunch Break",
+                "description": "Networking lunch for all attendees.",
+                "judgesGuests": [],
+                "location": "Dining Hall"
+              },
+              {
+                "time": "2:30 PM - 5:00 PM",
+                "activity": "Boardroom",
+                "description": "A simulated high-stakes corporate meeting where participants tackle a crisis scenario.",
+                "judgesGuests": ["Gaurav Srivastav", "Avjit Dutta", "Achuth Raj"],
+                "location": "Architecture Block Seminar Hall"
+              },
+              {
+                "time": "5:00 PM - 7:00 PM",
+                "activity": "Panel Discussion",
+                "description": "Engaging panel discussion with industry experts and successful entrepreneurs sharing insights on innovation and startups.",
+                "judgesGuests": ["Manish Dsouza"],
+                "location": "BBC (Basketball Court)"
+              },
+              {
+                "time": "7:30 PM - 8:30 PM",
+                "activity": "Valedictory & Prize Distribution",
+                "description": "Concluding ceremony, guest of honor speech, and prize distribution for all competitions.",
+                "judgesGuests": [],
+                "location": "BBC (Basketball Court)"
+              },
+              {
+                "time": "8:45 PM - 9:30 PM",
+                "activity": "DJ Night",
+                "description": "End the summit on a high note with an electrifying DJ night. Dance, celebrate, and network with fellow participants and speakers.",
+                "judgesGuests": [],
+                "location": "BBC (Basketball Court)"
+              }
+            ]
+          },
+          {
+            "trackName": "TED Talks",
+            "events": [
+              {
+                "time": "11:45 AM - 1:45 PM",
+                "activity": "TED Talk: Importance of Gigs for College students",
+                "description": "Discover how freelance work and gig opportunities can shape your career path while still in college.",
+                "judgesGuests": ["Guru Prasad"],
+                "location": "APJ Auditorium"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "overnightEvent": {
+      "name": "Biz Marathon",
+      "timeline": [
+        {
+          "timing": "12:00 AM",
+          "activity": "Case Study Release",
+          "description": "Teams gather to receive the case problem and rules for the overnight challenge.",
+          "judgesGuests": ["Sunny Kabrawala", "Sayanee Bhowmik"],
+          "location": "Idea Lab/Architecture Block Seminar Lab",
+          "day": 2
+        },
+        {
+          "timing": "12:00 AM - 5:00 AM",
+          "activity": "Business Triathlon",
+          "description": "Teams work through the night to analyze the problem and prepare their solution and presentation.",
+          "judgesGuests": [],
+          "location": "Idea Lab/Architecture Block Seminar Lab",
+          "day": 2
+        },
+        {
+          "timing": "7:00 AM",
+          "activity": "Final Presentations",
+          "description": "Shortlisted teams present their solutions to a panel of judges.",
+          "judgesGuests": [],
+          "location": "MV Auditorium",
+          "day": 2
+        }
+      ]
+    }
+  }
