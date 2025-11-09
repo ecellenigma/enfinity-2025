@@ -167,20 +167,20 @@ export default function Page() {
           </Link>
         </section>
 
-        {/* Judges Section */}
-        <section
-          id="judges"
-          className="relative max-w-6xl mx-auto px-4 sm:px-6 pb-20"
-        >
-          <JudgesSection />
-        </section>
-
         {/* Competitions */}
         <section
           id="events"
           className="relative max-w-6xl mx-auto px-4 pt-8 sm:px-6 pb-20"
         >
           <CompetitionsSection />
+        </section>
+
+        {/* Judges Section */}
+        <section
+          id="judges"
+          className="relative max-w-6xl mx-auto px-4 sm:px-6 pb-20"
+        >
+          <JudgesSection />
         </section>
 
         {/* Previous Events */}
