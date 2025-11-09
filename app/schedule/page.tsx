@@ -108,7 +108,7 @@ export default function SchedulePage() {
                     </div>
 
                     <div className="relative space-y-6 pl-8 md:pl-12 mb-12">
-                      <div className="absolute left-[11px] md:left-[19px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-500 via-red-500 to-pink-500" />
+                      <div className="absolute left-[7px] md:left-[7px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-500 via-red-500 to-pink-500" />
 
                       {scheduleData.overnightEvent.timeline.map((event: any, idx: number) => (
                         <motion.div
@@ -119,11 +119,9 @@ export default function SchedulePage() {
                           transition={{ duration: 0.5, delay: idx * 0.1 }}
                           className="relative"
                         >
-                          <div className="absolute -left-8 md:-left-12 top-6">
-                            <div className="relative">
-                              <div className="absolute inset-0 bg-orange-500 rounded-full blur-md animate-pulse" />
-                              <div className="relative w-4 h-4 bg-gradient-to-br from-orange-400 to-red-400 rounded-full border-2 border-white" />
-                            </div>
+                          <div className="absolute -left-8 md:-left-12 top-6 flex items-center justify-center w-4 h-4">
+                            <div className="absolute inset-0 bg-orange-500 rounded-full blur-md animate-pulse" />
+                            <div className="relative w-4 h-4 bg-gradient-to-br from-orange-400 to-red-400 rounded-full border-2 border-white shadow-lg" />
                           </div>
 
                           <div className="group relative bg-gradient-to-br from-orange-500/10 via-red-500/10 to-pink-500/10 backdrop-blur-md border border-orange-400/30 rounded-2xl p-6 md:p-8 hover:border-orange-400/60 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/20">
@@ -187,7 +185,7 @@ export default function SchedulePage() {
                 {/* All Events Timeline */}
                 <div className="relative space-y-6 pl-8 md:pl-12">
                   {/* Timeline Line */}
-                  <div className="absolute left-[11px] md:left-[19px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 via-pink-500 to-purple-500" />
+                  <div className="absolute left-[7px] md:left-[7px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 via-pink-500 to-purple-500" />
 
                   {/* Combine and sort all tracks by time */}
                   {day.tracks
@@ -223,11 +221,9 @@ export default function SchedulePage() {
                         className="relative"
                       >
                         {/* Timeline Dot */}
-                        <div className="absolute -left-8 md:-left-12 top-6">
-                          <div className="relative">
-                            <div className="absolute inset-0 bg-purple-500 rounded-full blur-md animate-pulse" />
-                            <div className="relative w-4 h-4 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full border-2 border-white" />
-                          </div>
+                        <div className="absolute -left-8 md:-left-12 top-6 flex items-center justify-center w-4 h-4">
+                          <div className="absolute inset-0 bg-purple-500 rounded-full blur-md animate-pulse" />
+                          <div className="relative w-4 h-4 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full border-2 border-white shadow-lg" />
                         </div>
 
                         {/* Event Card */}
