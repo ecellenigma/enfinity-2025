@@ -17,7 +17,8 @@ import { EventStatusChip } from "@/components/event-status-chip";
 import EventCarousel from "@/components/eventcarousel";
 import { Prizepool } from "@/components/prizepool";
 import Sponsorcarousel from "@/components/sponsorcarousel";
-import { ScheduleHighlights } from "@/components/schedule-highlights";
+import { JudgesSection } from "@/components/judges-section";
+import { ArrowRight } from "lucide-react";
 
 const EVENT_START_DATE = new Date('2025-11-10T09:00:00+05:30'); // Oct 10, 2025, 09:00 AM IST
 const EVENT_END_DATE = new Date('2025-11-12T17:00:00+05:30'); // Oct 11, 2025, 05:00 PM IST
@@ -146,12 +147,32 @@ export default function Page() {
           <Prizepool />
         </section>
 
-        {/* Schedule Highlights */}
+        {/* Schedule Section */}
         <section
           id="schedule"
+          className="relative max-w-6xl mx-auto px-4 sm:px-6 py-16 text-center"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 gradient-text">
+            Event Schedule
+          </h2>
+          <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-8">
+            Discover all the exciting events, competitions, and sessions lined up for you
+          </p>
+          <Link
+            href="/schedule"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 rounded-full text-white font-semibold shadow-lg hover:shadow-purple-500/50 transition-all duration-300 group"
+          >
+            View Full Schedule
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </section>
+
+        {/* Judges Section */}
+        <section
+          id="judges"
           className="relative max-w-6xl mx-auto px-4 sm:px-6 pb-20"
         >
-          <ScheduleHighlights />
+          <JudgesSection />
         </section>
 
         {/* Competitions */}
