@@ -189,11 +189,33 @@ export default function SchedulePage() {
                   {/* Timeline Line */}
                   <div className="absolute left-[11px] md:left-[19px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 via-pink-500 to-purple-500" />
 
-                  {/* Combine all tracks */}
-                  {day.tracks.map((track) => 
-                    track.events.map((event, eventIdx) => (
+                  {/* Combine and sort all tracks by time */}
+                  {day.tracks
+                    .flatMap((track) => 
+                      track.events.map((event) => ({ ...event, trackName: track.trackName }))
+                    )
+                    .sort((a, b) => {
+                      // Parse time strings for sorting
+                      const parseTime = (timeStr: string) => {
+                        const time = timeStr.split(' - ')[0].trim();
+                        const match = time.match(/(\d+):(\d+)\s*(AM|PM)/i);
+                        if (!match) return 999;
+                        
+                        let hours = parseInt(match[1]);
+                        const minutes = parseInt(match[2]);
+                        const period = match[3].toUpperCase();
+                        
+                        if (period === 'AM' && hours === 12) hours = 0;
+                        if (period === 'PM' && hours !== 12) hours += 12;
+                        
+                        return hours * 60 + minutes;
+                      };
+                      
+                      return parseTime(a.time) - parseTime(b.time);
+                    })
+                    .map((event, eventIdx) => (
                       <motion.div
-                        key={`${track.trackName}-${eventIdx}`}
+                        key={`${event.trackName}-${eventIdx}`}
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
@@ -215,7 +237,7 @@ export default function SchedulePage() {
 
                           <div className="relative">
                             {/* Badge for TED Talks */}
-                            {track.trackName === "TED Talks" && (
+                            {event.trackName === "TED Talks" && (
                               <div className="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-blue-500/30 to-cyan-500/30 border border-blue-400/40 rounded-full mb-3 text-xs font-semibold text-blue-300">
                                 <Star className="w-3 h-3" />
                                 TED Talk
@@ -280,7 +302,7 @@ export default function SchedulePage() {
                         </div>
                       </motion.div>
                     ))
-                  )}
+                  }
                 </div>
               </motion.div>
             ))}
