@@ -2,14 +2,15 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Linkedin } from "lucide-react";
+import { Linkedin, Instagram } from "lucide-react";
 import Image from "next/image";
 
 interface Judge {
   name: string;
   role: string;
   image: string;
-  linkedin: string;
+  linkedin?: string;
+  instagram?: string;
 }
 
 const judges: Judge[] = [
@@ -60,7 +61,7 @@ const judges: Judge[] = [
     name: "Gaurav Srivastava",
     role: "Social Media Marketing Influencer",
     image: "/people/gaurav.jpg",
-    linkedin: "https://www.linkedin.com/in/gaurav",
+    instagram: "https://www.instagram.com/gaurav_speaks_",
   },
   {
     name: "Sharada Balaji",
@@ -78,19 +79,19 @@ const judges: Judge[] = [
     name: "Achuth Raj",
     role: "Co-Founder, ChiefFin Advisors",
     image: "/people/achuth.jpg",
-    linkedin: "https://www.linkedin.com/in/achuth",
+    linkedin: "https://www.linkedin.com/in/achuthraj",
   },
   {
     name: "Avijit Dutta",
     role: "Founder & Chief Designer, Nonlinear",
     image: "/people/avijit.jpg",
-    linkedin: "https://www.linkedin.com/in/avijit",
+    linkedin: "https://www.linkedin.com/in/avijitdutta1/",
   },
   {
     name: "Ganesh Kumar L.",
     role: "CEO, iFocus Systec (India) Private Limited",
     image: "/people/ganesh.jpg",
-    linkedin: "https://www.linkedin.com/in/ganesh",
+    linkedin: "https://in.linkedin.com/in/ganeshkumarlaxminarayan",
   },
 ];
 
@@ -130,12 +131,57 @@ export function JudgesSection() {
             transition={{ duration: 0.5, delay: index * 0.05 }}
             className="group"
           >
-            <Link
-              href={judge.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-            >
+            {judge.linkedin ? (
+              <Link
+                href={judge.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <div className="relative h-full bg-white/5 border border-white/10 rounded-xl overflow-hidden backdrop-blur-sm hover:border-purple-500/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-purple-500/20">
+                  {/* Image Container */}
+                  <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-purple-500/10 to-pink-500/10">
+                    <Image
+                      src={judge.image}
+                      alt={judge.name}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                    />
+                    {/* Social Media Icon Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 gap-3">
+                      <div className="bg-white/10 backdrop-blur-md rounded-full p-3 border border-white/20">
+                        <Linkedin className="w-5 h-5 text-white" />
+                      </div>
+                      {judge.instagram && (
+                        <Link
+                          href={judge.instagram}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="bg-white/10 backdrop-blur-md rounded-full p-3 border border-white/20 hover:bg-white/20 transition-colors"
+                        >
+                          <Instagram className="w-5 h-5 text-white" />
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Info Container */}
+                  <div className="p-5">
+                    <h3 className="text-lg font-bold text-white mb-1 group-hover:text-purple-300 transition-colors">
+                      {judge.name}
+                    </h3>
+                    <p className="text-sm text-white/60 leading-relaxed">
+                      {judge.role}
+                    </p>
+                  </div>
+
+                  {/* Subtle Glow Effect */}
+                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/10 group-hover:to-pink-500/10 transition-all duration-300 -z-10" />
+                </div>
+              </Link>
+            ) : (
               <div className="relative h-full bg-white/5 border border-white/10 rounded-xl overflow-hidden backdrop-blur-sm hover:border-purple-500/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-purple-500/20">
                 {/* Image Container */}
                 <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-purple-500/10 to-pink-500/10">
@@ -146,11 +192,18 @@ export function JudgesSection() {
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                   />
-                  {/* LinkedIn Icon Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                    <div className="bg-white/10 backdrop-blur-md rounded-full p-3 border border-white/20">
-                      <Linkedin className="w-5 h-5 text-white" />
-                    </div>
+                  {/* Social Media Icon Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 gap-3">
+                    {judge.instagram && (
+                      <Link
+                        href={judge.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-white/10 backdrop-blur-md rounded-full p-3 border border-white/20 hover:bg-white/20 transition-colors"
+                      >
+                        <Instagram className="w-5 h-5 text-white" />
+                      </Link>
+                    )}
                   </div>
                 </div>
 
@@ -167,7 +220,7 @@ export function JudgesSection() {
                 {/* Subtle Glow Effect */}
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/10 group-hover:to-pink-500/10 transition-all duration-300 -z-10" />
               </div>
-            </Link>
+            )}
           </motion.div>
         ))}
       </div>
