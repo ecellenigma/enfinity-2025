@@ -27,14 +27,14 @@
                 "activity": "Inauguration Ceremony",
                 "description": "Official start of the summit with lamp lighting and a welcome address.",
                 "judgesGuests": [],
-                "location": "MV Auditorium"
+                "location": "Sir M.V. Rao Auditorium"
               },
               {
                 "time": "10:45 AM - 12:00 PM",
                 "activity": "Keynote Address",
                 "description": "An inspiring talk by our esteemed keynote speaker to set the tone for the summit.",
                 "judgesGuests": ["Naseer Sathyala", "Harry Aloysius"],
-                "location": "MV Auditorium"
+                "location": "Sir M.V. Rao Auditorium"
               },
               {
                 "time": "1:00 PM - 2:30 PM",
@@ -99,7 +99,7 @@
                 "activity": "Biz Marathon Final Presentations",
                 "description": "Shortlisted teams present their solutions to a panel of judges.",
                 "judgesGuests": [],
-                "location": "MV Auditorium"
+                "location": "Sir M.V. Rao Auditorium"
               },
               {
                 "time": "12:00 PM - 1:00 PM",
@@ -113,7 +113,7 @@
                 "activity": "Boardroom Briefing",
                 "description": "Giving problem statement",
                 "judgesGuests": [],
-                "location": "ARCHI Seminar Hall"
+                "location": "Architecture Block Seminar Hall"
               },
               {
                 "time": "1:15 PM - 2:15 PM",
@@ -182,7 +182,7 @@
           "activity": "Case Study Release",
           "description": "Teams gather to receive the case problem and rules for the overnight challenge.",
           "judgesGuests": ["Sunny Kabrawala", "Sayanee Bhowmik"],
-          "location": "Idea Lab/ARCHI Seminar Lab",
+          "location": "Idea Lab/Architecture Block Seminar Lab",
           "day": 2
         },
         {
@@ -190,7 +190,7 @@
           "activity": "MARATHON",
           "description": "Teams work through the night to analyze the problem and prepare their solution and presentation.",
           "judgesGuests": [],
-          "location": "Idea Lab/ARCHI Seminar Lab",
+          "location": "Idea Lab/Architecture Block Seminar Lab",
           "day": 2
         },
         {
@@ -198,7 +198,7 @@
           "activity": "Submission Deadline",
           "description": "Final deadline for teams to submit their presentation decks.",
           "judgesGuests": [],
-          "location": "Idea Lab/ARCHI Seminar Lab",
+          "location": "Idea Lab/Architecture Block Seminar Lab",
           "day": 2
         },
         {
@@ -206,7 +206,7 @@
           "activity": "Final Presentations",
           "description": "Shortlisted teams present their solutions to a panel of judges.",
           "judgesGuests": [],
-          "location": "MV Auditorium",
+          "location": "Sir M.V. Rao Auditorium",
           "day": 2
         }
       ]
