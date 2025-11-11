@@ -113,7 +113,7 @@
                 "activity": "Boardroom Briefing",
                 "description": "Giving problem statement",
                 "judgesGuests": [],
-                "location": "Architecture Block Seminar Hall"
+                "location": "Sir M.V. Rao Auditorium"
               },
               {
                 "time": "1:15 PM - 2:15 PM",
@@ -127,7 +127,7 @@
                 "activity": "Boardroom",
                 "description": "A simulated high-stakes corporate meeting where participants tackle a crisis scenario.",
                 "judgesGuests": ["Gaurav Srivastava", "Avijit Dutta", "Achuth Raj"],
-                "location": "Architecture Block Seminar Hall"
+                "location": "Sir M.V. Rao Auditorium"
               },
               {
                 "time": "3:45 PM - 5:00 PM",
